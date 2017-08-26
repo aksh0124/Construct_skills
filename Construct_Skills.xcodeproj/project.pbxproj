@@ -15,6 +15,11 @@
 		C7B1CFC61F514EAC00AFE0B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7B1CFC41F514EAC00AFE0B5 /* LaunchScreen.storyboard */; };
 		C7B1CFD11F514EAC00AFE0B5 /* Construct_SkillsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B1CFD01F514EAC00AFE0B5 /* Construct_SkillsTests.m */; };
 		C7B1CFDC1F514EAC00AFE0B5 /* Construct_SkillsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B1CFDB1F514EAC00AFE0B5 /* Construct_SkillsUITests.m */; };
+		C7B1CFEB1F51512E00AFE0B5 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C7B1CFEA1F51512E00AFE0B5 /* logo.jpg */; };
+		C7B1CFF01F5168D600AFE0B5 /* menubtn1x.png in Resources */ = {isa = PBXBuildFile; fileRef = C7B1CFEF1F5168D600AFE0B5 /* menubtn1x.png */; };
+		C7B1CFF21F51699700AFE0B5 /* SWRevealViewController in Resources */ = {isa = PBXBuildFile; fileRef = C7B1CFF11F51699700AFE0B5 /* SWRevealViewController */; };
+		C7B1CFF51F516ACD00AFE0B5 /* NavigationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B1CFF41F516ACD00AFE0B5 /* NavigationTableViewController.m */; };
+		C7B1CFF81F516C4E00AFE0B5 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B1CFF71F516C4E00AFE0B5 /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,13 @@
 		C7B1CFD71F514EAC00AFE0B5 /* Construct_SkillsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Construct_SkillsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7B1CFDB1F514EAC00AFE0B5 /* Construct_SkillsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Construct_SkillsUITests.m; sourceTree = "<group>"; };
 		C7B1CFDD1F514EAC00AFE0B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7B1CFEA1F51512E00AFE0B5 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = logo.jpg; path = ../../../Downloads/logo.jpg; sourceTree = "<group>"; };
+		C7B1CFEF1F5168D600AFE0B5 /* menubtn1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubtn1x.png; sourceTree = "<group>"; };
+		C7B1CFF11F51699700AFE0B5 /* SWRevealViewController */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SWRevealViewController; sourceTree = SOURCE_ROOT; };
+		C7B1CFF31F516ACD00AFE0B5 /* NavigationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationTableViewController.h; sourceTree = "<group>"; };
+		C7B1CFF41F516ACD00AFE0B5 /* NavigationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationTableViewController.m; sourceTree = "<group>"; };
+		C7B1CFF61F516C4E00AFE0B5 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../SWRevealViewController/SWRevealViewController.h; sourceTree = "<group>"; };
+		C7B1CFF71F516C4E00AFE0B5 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../SWRevealViewController/SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +113,16 @@
 		C7B1CFB51F514EAB00AFE0B5 /* Construct_Skills */ = {
 			isa = PBXGroup;
 			children = (
+				C7B1CFF11F51699700AFE0B5 /* SWRevealViewController */,
+				C7B1CFE91F51510100AFE0B5 /* images */,
 				C7B1CFB91F514EAC00AFE0B5 /* AppDelegate.h */,
 				C7B1CFBA1F514EAC00AFE0B5 /* AppDelegate.m */,
+				C7B1CFF61F516C4E00AFE0B5 /* SWRevealViewController.h */,
+				C7B1CFF71F516C4E00AFE0B5 /* SWRevealViewController.m */,
 				C7B1CFBC1F514EAC00AFE0B5 /* ViewController.h */,
 				C7B1CFBD1F514EAC00AFE0B5 /* ViewController.m */,
+				C7B1CFF31F516ACD00AFE0B5 /* NavigationTableViewController.h */,
+				C7B1CFF41F516ACD00AFE0B5 /* NavigationTableViewController.m */,
 				C7B1CFBF1F514EAC00AFE0B5 /* Main.storyboard */,
 				C7B1CFC21F514EAC00AFE0B5 /* Assets.xcassets */,
 				C7B1CFC41F514EAC00AFE0B5 /* LaunchScreen.storyboard */,
@@ -138,6 +156,15 @@
 				C7B1CFDD1F514EAC00AFE0B5 /* Info.plist */,
 			);
 			path = Construct_SkillsUITests;
+			sourceTree = "<group>";
+		};
+		C7B1CFE91F51510100AFE0B5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C7B1CFEF1F5168D600AFE0B5 /* menubtn1x.png */,
+				C7B1CFEA1F51512E00AFE0B5 /* logo.jpg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,7 +273,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B1CFEB1F51512E00AFE0B5 /* logo.jpg in Resources */,
 				C7B1CFC61F514EAC00AFE0B5 /* LaunchScreen.storyboard in Resources */,
+				C7B1CFF21F51699700AFE0B5 /* SWRevealViewController in Resources */,
+				C7B1CFF01F5168D600AFE0B5 /* menubtn1x.png in Resources */,
 				C7B1CFC31F514EAC00AFE0B5 /* Assets.xcassets in Resources */,
 				C7B1CFC11F514EAC00AFE0B5 /* Main.storyboard in Resources */,
 			);
@@ -274,6 +304,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7B1CFBE1F514EAC00AFE0B5 /* ViewController.m in Sources */,
+				C7B1CFF51F516ACD00AFE0B5 /* NavigationTableViewController.m in Sources */,
+				C7B1CFF81F516C4E00AFE0B5 /* SWRevealViewController.m in Sources */,
 				C7B1CFBB1F514EAC00AFE0B5 /* AppDelegate.m in Sources */,
 				C7B1CFB81F514EAC00AFE0B5 /* main.m in Sources */,
 			);

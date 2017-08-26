@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NavigationTableViewController.h
 //  Construct_Skills
 //
 //  Created by Akshita on 26/08/17.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *menubtn;
-
+@interface NavigationTableViewController : UITableViewController
 
 @end
-

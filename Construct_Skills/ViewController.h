@@ -13,5 +13,8 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menubtn;
 
 
+- (IBAction)logoutbtn:(id)sender;
+
+
 @end
 

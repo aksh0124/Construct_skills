@@ -25,6 +25,8 @@
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+  
+    
 }
 
 
@@ -35,4 +37,12 @@
 }
 
 
+- (IBAction)logoutbtn:(id)sender
+{
+    NSString * storyboardName = @"Main";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
+    UIViewController * vc= [storyboard instantiateViewControllerWithIdentifier:@"LoginPage"];
+    [self presentViewController:vc animated:NO completion:nil];
+}
+ 
 @end

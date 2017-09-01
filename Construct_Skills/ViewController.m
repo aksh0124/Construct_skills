@@ -11,7 +11,9 @@
 
 
 @interface ViewController ()
-
+{
+    UITableView *tableview1;
+}
 @end
 
 @implementation ViewController

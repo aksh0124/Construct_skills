@@ -1,31 +1,25 @@
 //
-//  SenderViewController.h
+//  RequireViewController.h
 //  Construct_Skills
 //
-//  Created by Akshita on 01/09/17.
+//  Created by Akshita on 02/09/17.
 //  Copyright © 2017 ASC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "ViewController.h"
 
-@interface SenderViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface RequireViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
     BOOL flag;
 }
 
 @property NSArray *itemarray;
 @property NSArray *unitarray;
-@property NSInteger *rows;
-
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menubtn;
 
-@property (strong, nonatomic) IBOutlet UITextField *challan_no;
 @property (strong, nonatomic) IBOutlet UITextField *date;
 @property (strong, nonatomic) IBOutlet UITextField *site_from;
 @property (strong, nonatomic) IBOutlet UITextField *site_to;
-@property (strong, nonatomic) IBOutlet UITextField *driver_name;
-@property (strong, nonatomic) IBOutlet UITextField *vehicle_no;
 
 @property (strong, nonatomic) IBOutlet UILabel *item1;
 @property (strong, nonatomic) IBOutlet UILabel *item2;
@@ -50,12 +44,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *qty_req3;
 @property (strong, nonatomic) IBOutlet UITextField *qty_req4;
 @property (strong, nonatomic) IBOutlet UITextField *qty_req5;
-
-@property (strong, nonatomic) IBOutlet UITextField *qty_sent1;
-@property (strong, nonatomic) IBOutlet UITextField *qty_sent2;
-@property (strong, nonatomic) IBOutlet UITextField *qty_sent3;
-@property (strong, nonatomic) IBOutlet UITextField *qty_sent4;
-@property (strong, nonatomic) IBOutlet UITextField *qty_sent5;
 
 @property (strong, nonatomic) IBOutlet UILabel *unit1;
 @property (strong, nonatomic) IBOutlet UILabel *unit2;
@@ -90,6 +78,15 @@
 @property (strong, nonatomic) IBOutlet UITableView *unit_table3;
 @property (strong, nonatomic) IBOutlet UITableView *unit_table4;
 @property (strong, nonatomic) IBOutlet UITableView *unit_table5;
+
+@property NSString *itemname;
+@property NSString *ReqQty;
+@property NSString *ItmUnits;
+@property NSString *SiteFrom;
+@property NSString *SiteTo;
+@property NSString *Date;
+
+
 
 
 @end

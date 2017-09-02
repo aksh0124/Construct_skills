@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    menu = [[NSArray alloc] initWithObjects:@"Dashboard", @"Send", @"Receive", @"Reports", nil];
+    menu = [[NSArray alloc] initWithObjects:@"Dashboard", @"Send", @"Receive", @"Reports", @"Requirement", nil];
   
 }
 

@@ -1,23 +1,19 @@
 //
-//  SenderViewController.m
+//  RequireViewController.m
 //  Construct_Skills
 //
-//  Created by Akshita on 01/09/17.
+//  Created by Akshita on 02/09/17.
 //  Copyright © 2017 ASC. All rights reserved.
 //
 
-#import "SenderViewController.h"
+#import "RequireViewController.h"
 #import "SWRevealViewController.h"
 
-
-@interface SenderViewController ()
-{
-    ViewController *vc;
-}
+@interface RequireViewController ()
 
 @end
 
-@implementation SenderViewController
+@implementation RequireViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,9 +24,15 @@
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+  _item1.text = _itemname;
+    _qty_req1.text = _ReqQty;
+    _unit1.text = _ItmUnits;
+    _date.text = _Date;
+    _site_to.text = _SiteTo;
+    _site_from.text = _SiteFrom;
     
-    [self.view addGestureRecognizer:tap];
+    
+    NSLog(@"%@",_itemname);
     
     _itemarray = [[NSArray alloc]initWithObjects:@"Bricks", @"Cement", @"Concrete", @"Iron Rods", @"Iron Sheets", @"Pipes", @"Sand", @"Steel",  @"Taps",@"Tiles", @"Wooden Blocks", nil];
     _unitarray = [[NSArray alloc]initWithObjects:@"Pcs", @"Sq.m", @"Sq.foot", @"Ton", @"Kg", nil];
@@ -96,7 +98,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    UITableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //    UITableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if(tableView == _item_table1)
     {
         if(cell == nil)
@@ -178,18 +180,18 @@
         cell.textLabel.text = self.unitarray[indexPath.row];
     }
     
-
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
- //   UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-
+    //   UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     
-   if(tableView == self.item_table1)
+    
+    if(tableView == self.item_table1)
     {
-      //  [self.item1 setText:[self.itemarray objectAtIndex:indexPath.row]];
+        //  [self.item1 setText:[self.itemarray objectAtIndex:indexPath.row]];
         [self.item1 setText:[self.itemarray objectAtIndex:indexPath.row]];
         
     }
@@ -233,7 +235,7 @@
     }
     
 }
-
+/*
 -(void)dismissKeyboard
 {
     [_challan_no resignFirstResponder];
@@ -243,9 +245,21 @@
     [_driver_name resignFirstResponder];
     [_vehicle_no resignFirstResponder];
 }
-
+*/
 - (IBAction)submitaction:(id)sender
 {
+    NSError *error;
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/requestform.php?format=json&itemid=121457&itemcode=5455&itemname=ABB@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@Date=%@",_ReqQty,_ItmUnits,_Date,_SiteTo,_SiteFrom];
+    
+    NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
+ NSMutableArray   *jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
+    
+    NSLog(@"json data are: %@",jsonarray);
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Request Successfully submitted" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+    
     
 }
 
@@ -408,6 +422,7 @@
         [sender setTitle:@"▼" forState:UIControlStateNormal];
     }
 }
+
 
 
 @end

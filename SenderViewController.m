@@ -12,12 +12,13 @@
 
 @interface SenderViewController ()
 {
-    ViewController *vc;
+    RequestPage *rp;
 }
 
 @end
 
 @implementation SenderViewController
+@synthesize jsonarray,request_num;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,18 +29,58 @@
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+ //   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     
-    [self.view addGestureRecognizer:tap];
+ //   [self.view addGestureRecognizer:tap];
     
     _itemarray = [[NSArray alloc]initWithObjects:@"Bricks", @"Cement", @"Concrete", @"Iron Rods", @"Iron Sheets", @"Pipes", @"Sand", @"Steel",  @"Taps",@"Tiles", @"Wooden Blocks", nil];
     _unitarray = [[NSArray alloc]initWithObjects:@"Pcs", @"Sq.m", @"Sq.foot", @"Ton", @"Kg", nil];
+    
+    
+    
+    [self retriveData];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void) retriveData
+{
+    NSError *error;
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/sender.php?format=json&request_num=%@",request_num];
+
+//    NSLog(@"%@",url_string);
+    NSURL *url = [NSURL URLWithString:url_string];
+    NSString *result = [NSString stringWithContentsOfURL:url
+                                                encoding:NSASCIIStringEncoding
+                                                   error:&error];
+    NSLog(@"result: %@ \n Error: %@", result, error);
+
+    
+/*    jsonarray = [[NSMutableArray alloc]init];
+    
+//    NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
+ //   NSMutableData *data1 = [NSMutableData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
+    
+  //  jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
+    jsonarray = [NSJSONSerialization JSONObjectWithData:[url_string dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
+    NSLog(@"%@",error);
+    NSLog(@"json data are: %@",jsonarray);*/
+    
+/*    dishesarray = [[NSMutableArray alloc]init];
+    
+    for(int i=0; i<jsonarray.count; i++)
+    {
+        NSString *IName = [[jsonarray objectAtIndex:i] objectForKey:@"item_name"];
+        NSString *IType = [[jsonarray objectAtIndex:i] objectForKey:@"item_type"];
+        
+        [dishesarray addObject:[[DishesList alloc]initWithItem_Name:IName andItem_Type:IType]];
+    }
+    
+    [self.dishestable reloadData];*/
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -233,7 +274,7 @@
     }
     
 }
-
+/*
 -(void)dismissKeyboard
 {
     [_challan_no resignFirstResponder];
@@ -243,7 +284,7 @@
     [_driver_name resignFirstResponder];
     [_vehicle_no resignFirstResponder];
 }
-
+*/
 - (IBAction)submitaction:(id)sender
 {
     

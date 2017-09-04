@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "RequestPage.h"
 
 @interface SenderViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
@@ -17,6 +18,13 @@
 @property NSArray *itemarray;
 @property NSArray *unitarray;
 @property NSInteger *rows;
+
+@property (nonatomic, strong) NSMutableArray *jsonarray;
+@property (nonatomic, strong) NSMutableArray *required_data_array;
+
+@property NSString *request_num;
+
+-(void) retriveData;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menubtn;
 

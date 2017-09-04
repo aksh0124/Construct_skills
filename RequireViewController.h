@@ -84,7 +84,7 @@
 @property NSString *ItmUnits;
 @property NSString *SiteFrom;
 @property NSString *SiteTo;
-@property NSString *Date;
+@property NSDate *Date1;
 
 
 

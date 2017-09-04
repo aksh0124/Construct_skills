@@ -24,18 +24,20 @@
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-  _item1.text = _itemname;
-    _qty_req1.text = _ReqQty;
-    _unit1.text = _ItmUnits;
-    _date.text = _Date;
-    _site_to.text = _SiteTo;
-    _site_from.text = _SiteFrom;
-    
-    
-    NSLog(@"%@",_itemname);
+ 
     
     _itemarray = [[NSArray alloc]initWithObjects:@"Bricks", @"Cement", @"Concrete", @"Iron Rods", @"Iron Sheets", @"Pipes", @"Sand", @"Steel",  @"Taps",@"Tiles", @"Wooden Blocks", nil];
     _unitarray = [[NSArray alloc]initWithObjects:@"Pcs", @"Sq.m", @"Sq.foot", @"Ton", @"Kg", nil];
+    
+    _itemname=_item1.text;
+    _ReqQty=_qty_req1.text;
+    _ItmUnits=_unit1.text;
+    _Date1=_date.text;
+    _SiteTo=_site_to.text;
+    _SiteFrom=_site_from.text;
+    
+    
+    NSLog(@"%@",_itemname);
     
 }
 
@@ -249,7 +251,7 @@
 - (IBAction)submitaction:(id)sender
 {
     NSError *error;
-    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/requestform.php?format=json&itemid=121457&itemcode=5455&itemname=ABB@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@Date=%@",_ReqQty,_ItmUnits,_Date,_SiteTo,_SiteFrom];
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/requestform.php?format=json&itemid=121457&itemcode=5455&itemname=%@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@&Date=%@",_item1.text,_qty_req1.text,_unit1.text,_site_from.text,_site_to.text,_date.text];
     
     NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
  NSMutableArray   *jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];

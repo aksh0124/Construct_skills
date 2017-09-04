@@ -100,14 +100,17 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    //    UITableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+ //   UIFont *myFont = [ UIFont fontWithName:@"System" size:12];
+   
     if(tableView == _item_table1)
     {
         if(cell == nil)
         {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
+     
         cell.textLabel.text = self.itemarray[indexPath.row];
+        
     }
     if(tableView == _item_table2)
     {
@@ -182,7 +185,7 @@
         cell.textLabel.text = self.unitarray[indexPath.row];
     }
     
-    
+     cell.textLabel.font = [cell.textLabel.font fontWithSize:11];
     return cell;
 }
 

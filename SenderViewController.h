@@ -99,5 +99,11 @@
 @property (strong, nonatomic) IBOutlet UITableView *unit_table4;
 @property (strong, nonatomic) IBOutlet UITableView *unit_table5;
 
+@property NSString *itemname;
+@property NSString *ReqQty;
+@property NSString *ItmUnits;
+@property NSString *SiteFrom;
+@property NSString *SiteTo;
+@property NSDate *Date1;
 
 @end

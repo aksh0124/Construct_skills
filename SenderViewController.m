@@ -13,6 +13,7 @@
 @interface SenderViewController ()
 {
     RequestPage *rp;
+    
 }
 
 @end
@@ -36,8 +37,7 @@
     _itemarray = [[NSArray alloc]initWithObjects:@"Bricks", @"Cement", @"Concrete", @"Iron Rods", @"Iron Sheets", @"Pipes", @"Sand", @"Steel",  @"Taps",@"Tiles", @"Wooden Blocks", nil];
     _unitarray = [[NSArray alloc]initWithObjects:@"Pcs", @"Sq.m", @"Sq.foot", @"Ton", @"Kg", nil];
     
-    
-    
+   
     [self retriveData];
     
 }
@@ -52,13 +52,35 @@
     NSError *error;
     NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/sender.php?format=json&request_num=%@",request_num];
 
-//    NSLog(@"%@",url_string);
+
     NSURL *url = [NSURL URLWithString:url_string];
     NSString *result = [NSString stringWithContentsOfURL:url
                                                 encoding:NSASCIIStringEncoding
                                                    error:&error];
     NSLog(@"result: %@ \n Error: %@", result, error);
 
+    NSData *rawData = [result dataUsingEncoding:NSASCIIStringEncoding];
+    NSDictionary *data = [NSJSONSerialization JSONObjectWithData:rawData
+                                                         options: kNilOptions
+                                                           error:&error];
+    
+/*    _itemname = [data objectForKey:@"item_name"];
+    _ReqQty = [data objectForKey:@"quantity_req"];
+    _ItmUnits = [data objectForKey:@"units"];
+    _SiteFrom = [data objectForKey:@"site_from"];
+    _SiteTo = [data objectForKey:@"site_to"];
+    _Date1 = [data objectForKey:@"date"];
+
+    _item1.text = _itemname;
+    _qty_req1.text = _ReqQty;
+    _unit1.text = _ItmUnits;
+    _site_from.text = _SiteFrom;
+    _site_to.text = _SiteTo;
+    _date.text = _Date1;       */
+    
+    [_item1 setText:[data objectForKey:@"item_name"]];
+    [_qty_req1 setText:[data objectForKey:@"quantity_req"]];
+    
     
 /*    jsonarray = [[NSMutableArray alloc]init];
     
@@ -137,7 +159,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    UITableViewCell *cell2 = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if(tableView == _item_table1)
     {
         if(cell == nil)
@@ -219,7 +241,7 @@
         cell.textLabel.text = self.unitarray[indexPath.row];
     }
     
-
+    cell.textLabel.font = [cell.textLabel.font fontWithSize:11];
     return cell;
 }
 

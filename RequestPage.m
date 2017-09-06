@@ -36,13 +36,7 @@
 }
 
 
-/*
-- (IBAction)submitaction:(id)sender
-{
-   
-    svc.request_num = self.request_num11.text;
-}
-*/
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"request_sendersegue"])

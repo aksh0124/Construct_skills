@@ -13,7 +13,7 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menubtn;
 @property (strong, nonatomic) IBOutlet UITextField *request_num11;
-@property (strong, nonatomic) IBOutlet UIButton *submitbtn;
-- (IBAction)submitaction:(id)sender;
+
+
 
 @end

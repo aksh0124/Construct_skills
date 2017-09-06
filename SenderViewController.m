@@ -285,7 +285,19 @@
 */
 - (IBAction)submitaction:(id)sender
 {
+    NSError *error;
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/sender.php?format=json&itemid=121457&itemcode=5455&itemname=%@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@&ReqDate=%@&Challan_No=%@&Driver_Name=%@&Vehicle_No=%@&SentQty=%@&request_num=%@",_item1.text,_qty_req1.text,_unit1.text,_site_from.text,_site_to.text,_date.text,_challan_no.text,_driver_name.text,_vehicle_no.text,_qty_sent1.text,request_num];
+    NSLog(@"%@",url_string);
+    NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
+    jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
     
+    NSLog(@"json data are: %@",jsonarray);
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Request Successfully submitted" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+    
+   
 }
 
 - (IBAction)dropbtn1action:(id)sender

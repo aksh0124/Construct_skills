@@ -160,7 +160,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.22352941179999999" green="0.2156862745" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
-                                    <segue destination="cyt-0c-4Il" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="kB8-xc-HaT"/>
+                                    <segue destination="1ZJ-az-6p3" kind="custom" customClass="SWRevealViewControllerSegueSetController" id="eAs-T3-JH4"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Reports" textLabel="FrB-eb-le2" style="IBUITableViewCellStyleDefault" id="Yuh-8L-shi">
@@ -357,7 +357,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kck-6u-QB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3674" y="553"/>
+            <point key="canvasLocation" x="3617" y="572"/>
         </scene>
         <!--Sender View Controller-->
         <scene sceneID="gaS-TN-qqr">
@@ -975,7 +975,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Rd-tY-Fec" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3673" y="1226"/>
+            <point key="canvasLocation" x="3617" y="1325"/>
         </scene>
         <!--Require View Controller-->
         <scene sceneID="Yyk-vQ-Nvy">
@@ -1506,7 +1506,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2gy-Lq-BnO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4349.6000000000004" y="552.77361319340332"/>
+            <point key="canvasLocation" x="5052" y="1326"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pY7-Uk-yzE">
@@ -1888,7 +1888,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQb-4K-rnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2992.8000000000002" y="552.77361319340332"/>
+            <point key="canvasLocation" x="4297" y="1378"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iw9-N3-bn8">
@@ -1907,6 +1907,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPi-qX-P8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2151" y="1338"/>
+        </scene>
+        <!--Request Page-->
+        <scene sceneID="Yws-yW-xVU">
+            <objects>
+                <viewController id="1ZJ-az-6p3" customClass="RequestPage" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Ib-Pq-Sk0"/>
+                        <viewControllerLayoutGuide type="bottom" id="3et-Xk-ckK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gKz-nf-aj5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="28C-Eh-nvI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="100"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Request Form" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5A-NQ-YRk">
+                                <rect key="frame" x="120" y="182" width="134" height="26"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.22352941179999999" green="0.2156862745" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Request No.:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ov2-Fy-Icb">
+                                <rect key="frame" x="72" y="291" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dCZ-Iy-f6B">
+                                <rect key="frame" x="179" y="291" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JU-nd-0pb">
+                                <rect key="frame" x="154" y="361" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.22352941179999999" green="0.2156862745" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cyt-0c-4Il" kind="show" id="kcx-Vi-sg6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.76862745099999996" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EQY-2n-JPl">
+                        <barButtonItem key="leftBarButtonItem" image="Image" id="Z3U-in-o1M">
+                            <color key="tintColor" red="0.22352941179999999" green="0.2156862745" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menubtn" destination="Z3U-in-o1M" id="r8u-Gl-nWT"/>
+                        <outlet property="request_num11" destination="dCZ-Iy-f6B" id="Z4L-1Z-tkz"/>
+                        <outlet property="submitbtn" destination="7JU-nd-0pb" id="eCc-v1-7JJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nRg-T2-mmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4297" y="572"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SWRevealViewController.h"
 
 @interface RequireViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 {
@@ -84,7 +85,7 @@
 @property NSString *ItmUnits;
 @property NSString *SiteFrom;
 @property NSString *SiteTo;
-@property NSDate *Date1;
+@property NSString *ReqDate;
 
 
 

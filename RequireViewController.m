@@ -7,7 +7,7 @@
 //
 
 #import "RequireViewController.h"
-#import "SWRevealViewController.h"
+
 
 @interface RequireViewController ()
 
@@ -32,7 +32,7 @@
     _itemname=_item1.text;
     _ReqQty=_qty_req1.text;
     _ItmUnits=_unit1.text;
-    _Date1=_date.text;
+    _ReqDate =_date.text;
     _SiteTo=_site_to.text;
     _SiteFrom=_site_from.text;
     
@@ -254,8 +254,8 @@
 - (IBAction)submitaction:(id)sender
 {
     NSError *error;
-    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/requestform.php?format=json&itemid=121457&itemcode=5455&itemname=%@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@&Date=%@",_item1.text,_qty_req1.text,_unit1.text,_site_from.text,_site_to.text,_date.text];
-    
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/requestform.php?format=json&itemid=1200&itemcode=A67&itemname=%@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@&ReqDate=%@",_item1.text,_qty_req1.text,_unit1.text,_site_from.text,_site_to.text,_date.text];
+    NSLog(@"%@",url_string);
     NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
  NSMutableArray   *jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
     

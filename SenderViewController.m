@@ -50,7 +50,7 @@
 -(void) retriveData
 {
     NSError *error;
-    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/sender.php?format=json&request_num=%@",request_num];
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/request_num.php?format=json&request_num=%@",request_num];
 
 
     NSURL *url = [NSURL URLWithString:url_string];
@@ -60,49 +60,25 @@
     NSLog(@"result: %@ \n Error: %@", result, error);
 
     NSData *rawData = [result dataUsingEncoding:NSASCIIStringEncoding];
-    NSDictionary *data = [NSJSONSerialization JSONObjectWithData:rawData
+    NSArray *data = [NSJSONSerialization JSONObjectWithData:rawData
                                                          options: kNilOptions
                                                            error:&error];
+    _itemname = [[data objectAtIndex:0]valueForKey:@"item_name"];
+     _ReqQty = [[data objectAtIndex:0]valueForKey:@"quantity_req"];
+     _ItmUnits = [[data objectAtIndex:0]valueForKey:@"units"];
+     _SiteFrom = [[data objectAtIndex:0]valueForKey:@"site_from"];
+     _SiteTo = [[data objectAtIndex:0]valueForKey:@"site_to"];
+     _ReqDate = [[data objectAtIndex:0]valueForKey:@"date"];
     
-/*    _itemname = [data objectForKey:@"item_name"];
-    _ReqQty = [data objectForKey:@"quantity_req"];
-    _ItmUnits = [data objectForKey:@"units"];
-    _SiteFrom = [data objectForKey:@"site_from"];
-    _SiteTo = [data objectForKey:@"site_to"];
-    _Date1 = [data objectForKey:@"date"];
 
     _item1.text = _itemname;
     _qty_req1.text = _ReqQty;
     _unit1.text = _ItmUnits;
     _site_from.text = _SiteFrom;
     _site_to.text = _SiteTo;
-    _date.text = _Date1;       */
+    _date.text = _ReqDate;
     
-    [_item1 setText:[data objectForKey:@"item_name"]];
-    [_qty_req1 setText:[data objectForKey:@"quantity_req"]];
-    
-    
-/*    jsonarray = [[NSMutableArray alloc]init];
-    
-//    NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
- //   NSMutableData *data1 = [NSMutableData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
-    
-  //  jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
-    jsonarray = [NSJSONSerialization JSONObjectWithData:[url_string dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
-    NSLog(@"%@",error);
-    NSLog(@"json data are: %@",jsonarray);*/
-    
-/*    dishesarray = [[NSMutableArray alloc]init];
-    
-    for(int i=0; i<jsonarray.count; i++)
-    {
-        NSString *IName = [[jsonarray objectAtIndex:i] objectForKey:@"item_name"];
-        NSString *IType = [[jsonarray objectAtIndex:i] objectForKey:@"item_type"];
-        
-        [dishesarray addObject:[[DishesList alloc]initWithItem_Name:IName andItem_Type:IType]];
-    }
-    
-    [self.dishestable reloadData];*/
+
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -104,6 +104,6 @@
 @property NSString *ItmUnits;
 @property NSString *SiteFrom;
 @property NSString *SiteTo;
-@property NSDate *Date1;
+@property NSString *ReqDate;
 
 @end

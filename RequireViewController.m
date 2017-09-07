@@ -244,24 +244,20 @@
 - (IBAction)submitaction:(id)sender
 {
     
-/*    NSMutableArray *userinfoArray = [[NSMutableArray alloc]init];
-    NSString *tempString = [[NSString alloc]initWithString:[_item1 text]];
-    [userinfoArray addObject:tempString];*/
     
     NSError *error;
     NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/requestform.php?format=json&itemid=120&itemname=%@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@&ReqDate=%@",_item1.text,_qty_req1.text,_unit1.text,_site_from.text,_site_to.text,_date.text];
     NSLog(@"%@",url_string);
     NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
- NSMutableArray   *jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
+    NSMutableArray   *jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
     
     NSLog(@"json data are: %@",jsonarray);
     
- //   _Req_id = [[jsonarray objectAtIndex:0]valueForKey:@"ReqId"];
- //   NSLog(@"%@",_Req_id);
+    //   _Req_id = [[jsonarray objectAtIndex:0]valueForKey:@"ReqId"];
+    //   NSLog(@"%@",_Req_id);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Request Successfully submitted" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];
-    
     
 }
 

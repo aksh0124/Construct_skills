@@ -29,15 +29,9 @@
     _itemarray = [[NSArray alloc]initWithObjects:@"Bricks", @"Cement", @"Concrete", @"Iron Rods", @"Iron Sheets", @"Pipes", @"Sand", @"Steel",  @"Taps",@"Tiles", @"Wooden Blocks", nil];
     _unitarray = [[NSArray alloc]initWithObjects:@"Pcs", @"Sq.m", @"Sq.foot", @"Ton", @"Kg", nil];
     
-    _itemname=_item1.text;
-    _ReqQty=_qty_req1.text;
-    _ItmUnits=_unit1.text;
-    _ReqDate =_date.text;
-    _SiteTo=_site_to.text;
-    _SiteFrom=_site_from.text;
-    
-    
-    NSLog(@"%@",_itemname);
+ /*   UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+  */
     
 }
 
@@ -191,14 +185,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //   UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    
     
     if(tableView == self.item_table1)
     {
-        //  [self.item1 setText:[self.itemarray objectAtIndex:indexPath.row]];
         [self.item1 setText:[self.itemarray objectAtIndex:indexPath.row]];
-        
     }
     if(tableView == self.item_table2)
     {
@@ -243,24 +233,31 @@
 /*
 -(void)dismissKeyboard
 {
-    [_challan_no resignFirstResponder];
+
     [_date resignFirstResponder];
     [_site_from resignFirstResponder];
     [_site_to resignFirstResponder];
-    [_driver_name resignFirstResponder];
-    [_vehicle_no resignFirstResponder];
-}
-*/
+    [_qty_req1 resignFirstResponder];
+  
+}*/
+
 - (IBAction)submitaction:(id)sender
 {
+    
+/*    NSMutableArray *userinfoArray = [[NSMutableArray alloc]init];
+    NSString *tempString = [[NSString alloc]initWithString:[_item1 text]];
+    [userinfoArray addObject:tempString];*/
+    
     NSError *error;
-    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/requestform.php?format=json&itemid=1200&itemcode=A67&itemname=%@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@&ReqDate=%@",_item1.text,_qty_req1.text,_unit1.text,_site_from.text,_site_to.text,_date.text];
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/requestform.php?format=json&itemid=120&itemname=%@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@&ReqDate=%@",_item1.text,_qty_req1.text,_unit1.text,_site_from.text,_site_to.text,_date.text];
     NSLog(@"%@",url_string);
     NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
  NSMutableArray   *jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
     
     NSLog(@"json data are: %@",jsonarray);
     
+ //   _Req_id = [[jsonarray objectAtIndex:0]valueForKey:@"ReqId"];
+ //   NSLog(@"%@",_Req_id);
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Request Successfully submitted" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];

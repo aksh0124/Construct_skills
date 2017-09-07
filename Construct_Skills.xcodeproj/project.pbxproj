@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C70ABFFE1F613C4D00A5A482 /* ReceiverRequestPage.m in Sources */ = {isa = PBXBuildFile; fileRef = C70ABFFD1F613C4D00A5A482 /* ReceiverRequestPage.m */; };
 		C70D440C1F5AA6330099B33C /* RequireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C70D440B1F5AA6330099B33C /* RequireViewController.m */; };
 		C74DD10F1F53D9330055C2D8 /* user4x.png in Resources */ = {isa = PBXBuildFile; fileRef = C74DD10E1F53D9330055C2D8 /* user4x.png */; };
 		C74DD1121F5401AC0055C2D8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C74DD1111F5401AC0055C2D8 /* CoreGraphics.framework */; };
@@ -50,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C70ABFFC1F613C4D00A5A482 /* ReceiverRequestPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReceiverRequestPage.h; path = ../ReceiverRequestPage.h; sourceTree = "<group>"; };
+		C70ABFFD1F613C4D00A5A482 /* ReceiverRequestPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReceiverRequestPage.m; path = ../ReceiverRequestPage.m; sourceTree = "<group>"; };
 		C70D440A1F5AA6330099B33C /* RequireViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequireViewController.h; path = ../RequireViewController.h; sourceTree = "<group>"; };
 		C70D440B1F5AA6330099B33C /* RequireViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RequireViewController.m; path = ../RequireViewController.m; sourceTree = "<group>"; };
 		C74DD10E1F53D9330055C2D8 /* user4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user4x.png; sourceTree = SOURCE_ROOT; };
@@ -177,6 +180,8 @@
 			children = (
 				C75BDA991F59318C0072A910 /* ReceiverViewController.h */,
 				C75BDA9A1F59318C0072A910 /* ReceiverViewController.m */,
+				C70ABFFC1F613C4D00A5A482 /* ReceiverRequestPage.h */,
+				C70ABFFD1F613C4D00A5A482 /* ReceiverRequestPage.m */,
 				C75BDA961F59313E0072A910 /* SenderViewController.h */,
 				C75BDA971F59313E0072A910 /* SenderViewController.m */,
 				C7DA342C1F5D1C5900050910 /* RequestPage.h */,
@@ -362,6 +367,7 @@
 				C7B1CFBB1F514EAC00AFE0B5 /* AppDelegate.m in Sources */,
 				C7B1CFB81F514EAC00AFE0B5 /* main.m in Sources */,
 				C75BDA981F59313E0072A910 /* SenderViewController.m in Sources */,
+				C70ABFFE1F613C4D00A5A482 /* ReceiverRequestPage.m in Sources */,
 				C70D440C1F5AA6330099B33C /* RequireViewController.m in Sources */,
 				C75BDA9B1F59318C0072A910 /* ReceiverViewController.m in Sources */,
 			);

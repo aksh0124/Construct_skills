@@ -1,30 +1,26 @@
 //
-//  RequestPage.m
+//  ReceiverRequestPage.m
 //  Construct_Skills
 //
-//  Created by Akshita on 04/09/17.
+//  Created by Akshita on 07/09/17.
 //  Copyright © 2017 ASC. All rights reserved.
 //
 
-#import "RequestPage.h"
+#import "ReceiverRequestPage.h"
+#import "ReceiverViewController.h"
 
-#import "SenderViewController.h"
-
-
-@interface RequestPage ()
+@interface ReceiverRequestPage ()
 {
-     SenderViewController *svc;
-   
+    ReceiverViewController *rvc;
 }
 
 @end
 
-@implementation RequestPage
+@implementation ReceiverRequestPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     _menubtn.target = self.revealViewController;
     _menubtn.action = @selector(revealToggle:);
     
@@ -38,16 +34,13 @@
 }
 
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"request_sendersegue"])
-    {
-        svc = [segue destinationViewController];
-        svc.request_num =  _request_num_id11.text;
-    
-        NSLog(@"%@", svc.request_num);
-    }
-
+if([[segue identifier] isEqualToString:@"request_receiversegue"])
+{
+    rvc = [segue destinationViewController];
+    rvc.request_num = _request_num_id11.text;
+    NSLog(@"%@", rvc.request_num);
+}
 }
 @end

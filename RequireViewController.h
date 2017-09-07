@@ -86,7 +86,7 @@
 @property NSString *SiteFrom;
 @property NSString *SiteTo;
 @property NSString *ReqDate;
-
+@property NSString *Req_id;
 
 
 

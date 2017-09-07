@@ -14,6 +14,7 @@
 @end
 
 @implementation ReceiverViewController
+@synthesize request_num,jsonarray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +24,7 @@
     _menubtn.action = @selector(revealToggle:);
     
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    [self retriveData];
     
 }
 
@@ -31,14 +33,56 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
+-(void) retriveData;
+{
+    NSError *error;
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/recv_request_num.php?format=json&request_num=%@",request_num];
+    
+    
+    NSURL *url = [NSURL URLWithString:url_string];
+    NSString *result = [NSString stringWithContentsOfURL:url
+                                                encoding:NSASCIIStringEncoding
+                                                   error:&error];
+    NSLog(@"result: %@ \n Error: %@", result, error);
+    
+    NSData *rawData = [result dataUsingEncoding:NSASCIIStringEncoding];
+    NSArray *data = [NSJSONSerialization JSONObjectWithData:rawData
+                                                    options: kNilOptions
+                                                      error:&error];
+    _itemname = [[data objectAtIndex:0]valueForKey:@"item_name"];
+    _ReqQty = [[data objectAtIndex:0]valueForKey:@"quantity_req"];
+    _ItmUnits = [[data objectAtIndex:0]valueForKey:@"units"];
+    _SiteFrom = [[data objectAtIndex:0]valueForKey:@"site_from"];
+    _SiteTo = [[data objectAtIndex:0]valueForKey:@"site_to"];
+    _ReqDate = [[data objectAtIndex:0]valueForKey:@"date"];
+     _Challan_No = [[data objectAtIndex:0]valueForKey:@"challan_no"];
+     _Driver_Name = [[data objectAtIndex:0]valueForKey:@"driver_name"];
+     _Vehicle_No = [[data objectAtIndex:0]valueForKey:@"vehicle_no"];
+    _SentQty = [[data objectAtIndex:0]valueForKey:@"quantity_sent"];
+    
+    
+    _item1.text = _itemname;
+    _qty_req1.text = _ReqQty;
+    _unit1.text = _ItmUnits;
+    _site_from.text = _SiteFrom;
+    _site_to.text = _SiteTo;
+    _date.text = _ReqDate;
+    _qty_recv1.text = _SentQty;
+    _challan_no.text = _Challan_No;
+    _driver_name.text = _Driver_Name;
+    _vehicle_no.text = _Vehicle_No;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+-(IBAction)submitaction:(id)sender
+{
+    NSError *error;
+    NSString *url_string = [NSString stringWithFormat:@"http://anantsoftcomputing.com/ConstructSkills/receiver.php?format=json&itemid=121457&itemname=%@&ReqQty=%@&ItmUnits=%@&SiteFrom=%@&SiteTo=%@&ReqDate=%@&Challan_No=%@&Driver_Name=%@&Vehicle_No=%@&RecvQty=%@&request_num=%@",_item1.text,_qty_req1.text,_unit1.text,_site_from.text,_site_to.text,_date.text,_challan_no.text,_driver_name.text,_vehicle_no.text,_qty_recv1.text,request_num];
+    NSLog(@"%@",url_string);
+    NSData *data1 = [NSData dataWithContentsOfURL:[NSURL URLWithString:url_string]];
+    jsonarray = [NSJSONSerialization JSONObjectWithData:data1 options:kNilOptions error:&error];
+    
+    NSLog(@"json data are: %@",jsonarray);
+}
 
 @end
